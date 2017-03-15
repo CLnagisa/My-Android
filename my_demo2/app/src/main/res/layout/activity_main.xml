@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    android:orientation = "vertical"
+    android:layout_width = "fill_parent"
+    android:layout_height = "wrap_content"
+    >
+
+    <TableLayout
+        android:layout_width = "fill_parent"
+        android:layout_height = "wrap_content"
+        android:collapseColumns = "3" >
+        <TextView
+            android:text = "表一"
+            android:gravity = "center"
+            />
+        <TableRow
+            android:background = "#000"
+            >
+            <TextView
+                android:text = "列0"
+                android:layout_width = "wrap_content"
+                android:layout_height = "wrap_content"
+                android:layout_weight = "1"
+                android:gravity = "center"
+                android:background = "#fff"
+                android:layout_margin = "0.5dip"
+                />
+            <TextView
+                android:text = "列1"
+                android:layout_width = "wrap_content"
+                android:layout_height = "wrap_content"
+                android:layout_weight = "1"
+                android:gravity = "center"
+                android:background = "#fff"
+                android:layout_margin = "0.5dip"
+                />
+            <TextView
+                android:text = "列2"
+                android:layout_width = "wrap_content"
+                android:layout_height = "wrap_content"
+                android:layout_weight = "1"
+                android:gravity = "center"
+                android:background = "#fff"
+                android:layout_margin = "0.5dip"
+                />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text = "列0"
+                android:layout_width = "wrap_content"
+                android:layout_height = "wrap_content"
+                android:layout_weight = "1"
+                android:gravity = "center"
+                android:onClick="switchGrade"
+                />
+            <TextView
+                android:text = "列1"
+                android:layout_width = "wrap_content"
+                android:layout_height = "wrap_content"
+                android:layout_weight = "1"
+                android:gravity = "center"
+                />
+            <TextView
+                android:text = "列2"
+                android:layout_width = "wrap_content"
+                android:layout_height = "wrap_content"
+                android:layout_weight = "1"
+                android:gravity = "center"
+                />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width = "fill_parent"
+        android:layout_height = "wrap_content"
+        android:stretchColumns = "1">
+        <TextView
+            android:text = "表二"
+            android:gravity = "center"
+            />
+        <TableRow>
+            <TextView
+                android:text = "列0不能伸展"
+                android:background = "#098234"
+                />
+            <TextView
+                android:text = "列1可以伸展"
+                android:gravity = "right"
+                android:background = "#123123"
+                />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width = "fill_parent"
+        android:layout_height = "wrap_content"
+        >
+        <TextView
+            android:text = "表三"
+            android:gravity = "center"
+            />
+        <TableRow>
+            <TextView
+                android:text = "这一列很长，酱会造成下一列无法显示或显示补全"
+                android:background = "#8b2c2c"
+                />
+            <TextView
+                android:text = "这一列被寄到了屏幕外"
+                android:background = "#222222"
+                />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width = "fill_parent"
+        android:layout_height = "wrap_content"
+        android:shrinkColumns = "0"
+        >
+        <TextView
+            android:text = "表四"
+            android:gravity = "center"
+            />
+        <TableRow>
+            <TextView
+                android:text = "由于设置shrinkcolumns这个属性，意思是可搜索的，所以则一列不管有躲藏都不会把其他列挤出去"
+                android:background = "#333333"
+                />
+            <TextView
+                android:text = "则一列会被显示完全"
+                android:background = "#444444"
+                />
+        </TableRow>
+
+    </TableLayout>
+</LinearLayout>
