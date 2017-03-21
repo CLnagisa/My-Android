@@ -3,4 +3,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <style name = "text">
+        <item name = "android:textSize">50px</item>
+        <item name = "android:textColor">#48ab34</item>
+    </style>
 </resources>

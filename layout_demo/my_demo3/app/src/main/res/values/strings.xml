@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">我的第三demo</string>
+    <string name="timetext">当前时间</string>
+</resources>
