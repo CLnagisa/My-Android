@@ -7,14 +7,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity = "center"
-        android:textSize = "40dp"
-        android:id = "@+id/back"/>
+        android:textSize = "30dp"
+        android:padding = "10px"
+        android:id = "@+id/back1"/>
 
     <Button
         android:text="@string/back"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button1" />
+        android:id="@+id/back" />
 
 
 </LinearLayout>
