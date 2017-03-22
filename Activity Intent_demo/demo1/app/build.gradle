@@ -3,13 +3,9 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
-    aaptOptions {
-        cruncherEnabled = false
-        useNewCruncher = false
-    }
     defaultConfig {
-        applicationId "com.demo4.my_demo4"
-        minSdkVersion 23
+        applicationId "com.demo1.demo1"
+        minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
