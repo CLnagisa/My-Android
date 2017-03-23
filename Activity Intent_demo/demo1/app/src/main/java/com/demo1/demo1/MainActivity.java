@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+
 public class MainActivity extends AppCompatActivity {
 
     //实例化4个RadioButton组件
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         r2 = (RadioButton) findViewById(R.id.b);
         r3 = (RadioButton) findViewById(R.id.c);
         r4 = (RadioButton) findViewById(R.id.d);
-        
+
         //监听单选按钮组
         //radioGroup.setOnCheckedChangeListener(mChangeRadio);
 

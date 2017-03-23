@@ -1,8 +1,9 @@
 package com.demo1.demo1;
 
-import android.app.Activity;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,7 +13,7 @@ import android.widget.TextView;
  * Created by 43715 on 2017/3/22.
  */
 
-public class OtherActivity extends Activity {
+public class OtherActivity extends AppCompatActivity {
     private Intent intent;
     private Bundle bunde;
 

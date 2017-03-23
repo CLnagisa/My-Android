@@ -3,10 +3,8 @@
     package="com.demo1.demo1">
 
     <application
-        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -15,7 +13,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".OtherActivity" android:label="demo1"/>
+
+        <activity
+            android:name=".OtherActivity"
+            android:label="back页面" />
+
     </application>
 
 </manifest>
