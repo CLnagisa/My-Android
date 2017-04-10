@@ -4,7 +4,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "com.dmo1.optionsmenu"
+        applicationId "com.dmo1.submenu"
         minSdkVersion 14
         targetSdkVersion 25
         versionCode 1

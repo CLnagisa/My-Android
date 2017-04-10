@@ -5,17 +5,20 @@ import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import org.w3c.dom.Text;
 
+public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //没有下面的内容点击是无反应的
+
         TextView tv = new TextView(this);
-        tv.setText("上下文菜单的载体");
+
         registerForContextMenu(tv);
         setContentView(tv);
     }
