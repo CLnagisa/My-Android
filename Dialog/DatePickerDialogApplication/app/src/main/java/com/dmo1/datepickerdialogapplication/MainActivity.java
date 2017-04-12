@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
         setdate = (Button) this.findViewById(R.id.setdate);
         //初始化Calendar日历对象
         Calendar c = Calendar.getInstance(Locale.CHINA);
-        Date mydate = new Date();   //获取当前的事件
-        c.setTime(mydate);  //为Calendar对象设置事件为当前日期
+        final Date mydate = new Date();   //获取当前的时间
+        c.setTime(mydate);  //为Calendar对象设置时间为当前日期
 
         year = c.get(Calendar.YEAR);  //获取Calendar对象中的年
         month = c.get(Calendar.MONDAY);  //获取Calendar对象中的月
@@ -44,7 +44,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //创建DatePIckerDialog对象
                 DatePickerDialog my_datePickerDialog = new DatePickerDialog(MainActivity.this, Datelistener, year, month, day);
+
+
+                long time = mydate.getTime();
+                my_datePickerDialog.getDatePicker().setMaxDate(time);   //设置时间最大值
+
+
                 my_datePickerDialog.show(); //显示DateOickerDialog组件
+
             }
         });
     }
