@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         c.setTime(mydate);  //为Calendar对象设置时间为当前日期
 
         year = c.get(Calendar.YEAR);  //获取Calendar对象中的年
-        month = c.get(Calendar.MONDAY);  //获取Calendar对象中的月
+        month = c.get(Calendar.MONTH);  //获取Calendar对象中的月
         day = c.get(Calendar.DAY_OF_MONTH); //获取这个月的第几天
         showdate.setText("当前日期：" + year + "-" + (month + 1) + "-" + day); //显示当前的年月日
 
@@ -48,8 +48,6 @@ public class MainActivity extends AppCompatActivity {
 
                 long time = mydate.getTime();
                 my_datePickerDialog.getDatePicker().setMaxDate(time);   //设置时间最大值
-
-
                 my_datePickerDialog.show(); //显示DateOickerDialog组件
 
             }
