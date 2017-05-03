@@ -2440,7 +2440,11 @@ containing a value of this type.
         public static final int Widget_AppCompat_Toolbar_Button_Navigation=0x7f080160;
         public static final int myActionBar=0x7f080161;
         public static final int myActionBar_1=0x7f080162;
+        /** 设置ActionBarStyle
+         */
         public static final int myAppTheme=0x7f080163;
+        /** 设置ActionBarStyle
+         */
         public static final int myAppTheme1=0x7f080164;
     }
     public static final class styleable {

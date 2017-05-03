@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="@color/blue2">
+        <ImageView
+            android:id="@+id/touxiang"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/a"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="用户名"
+            android:layout_below="@+id/touxiang"
+            android:layout_alignLeft="@+id/touxiang"
+            android:layout_alignStart="@+id/touxiang"
+            android:layout_marginTop="15dp"
+            android:textSize="15dp"/>
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="设置功能项"
+        android:gravity="center_vertical"
+        android:textSize="15dp"
+        android:layout_marginLeft="20dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="设置功能项"
+        android:gravity="center_vertical"
+        android:textSize="15dp"
+        android:layout_marginLeft="20dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="设置功能项"
+        android:gravity="center_vertical"
+        android:textSize="15dp"
+        android:layout_marginLeft="20dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="设置功能项"
+        android:gravity="center_vertical"
+        android:textSize="15dp"
+        android:layout_marginLeft="20dp"/>
+
+   <!-- 分割线-->
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@android:color/darker_gray"  />
+    <TextView
+        android:id="@+id/zhanghaozhuxiao"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="帐号注销"
+        android:gravity="center_vertical"
+        android:textSize="15dp"
+        android:layout_marginLeft="20dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="设置"
+        android:gravity="center_vertical"
+        android:textSize="15dp"
+        android:layout_marginLeft="20dp"/>
+
+
+
+</LinearLayout>

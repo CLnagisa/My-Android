@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ham.andy.jikezuoye">
+
+    <application
+
+        android:icon="@mipmap/ic_launcher"
+        android:label="结课"
+        android:supportsRtl="true"
+        android:theme="@style/myAppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Main"
+            android:theme="@style/myAppTheme1"
+            android:label="主页面" />
+        <activity
+            android:name=".youtanchukuang"
+            android:label=""
+            >
+
+        </activity>
+    </application>
+
+</manifest>
