@@ -1,0 +1,7 @@
+#Wed Apr 19 16:48:50 CST 2017
+base.0=C\:\\Users\\43715\\Desktop\\android\\My-Android\\AndroidWidget\\ListView\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_8d3e209cb4edd9059f4a4ede3f82357021c4fdd5
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=C\:\\Users\\43715\\Desktop\\android\\My-Android\\AndroidWidget\\ListView\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_c0f1e681f30720b4c7d1a99a848e523df73f2ba1\\classes.dex
+base.1=C\:\\Users\\43715\\Desktop\\android\\My-Android\\AndroidWidget\\ListView\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_c0f1e681f30720b4c7d1a99a848e523df73f2ba1
+file.0=C\:\\Users\\43715\\Desktop\\android\\My-Android\\AndroidWidget\\ListView\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_8d3e209cb4edd9059f4a4ede3f82357021c4fdd5\\classes.dex

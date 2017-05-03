@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ham.andy.jikezuoye"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="25" />
+
+    <meta-data
+        android:name="android.support.VERSION"
+        android:value="25.3.0" />
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="结课"
+        android:supportsRtl="true"
+        android:theme="@style/myAppTheme" >
+        <activity android:name="ham.andy.jikezuoye.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="ham.andy.jikezuoye.Main"
+            android:label="主页面"
+            android:theme="@style/myAppTheme1" />
+        <activity
+            android:name="ham.andy.jikezuoye.youtanchukuang"
+            android:label="" >
+        </activity>
+    </application>
+
+</manifest>

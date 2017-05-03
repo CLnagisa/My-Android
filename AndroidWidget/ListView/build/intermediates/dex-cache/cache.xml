@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\43715\Desktop\android\My-Android\AndroidWidget\ListView\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4b746ef0fd46acb5aaf3d9ab9a4cec22c28d3211">
+        <dex dex="C:\Users\43715\Desktop\android\My-Android\AndroidWidget\ListView\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.3.0_2b6b4a5040474bb0e6df743b4895a10ee8bd2696\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\43715\Desktop\android\My-Android\AndroidWidget\ListView\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5cc5ef8347a6bafa14556cbd35230aa9b3431bb0">
+        <dex dex="C:\Users\43715\Desktop\android\My-Android\AndroidWidget\ListView\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.3.0_ec54ce977e895ec109108769d8ce86283fe0715c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\43715\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.0\support-annotations-25.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="dd84903d2e1af25a6081ef9038ad863cb14ca3a0">
+        <dex dex="C:\Users\43715\Desktop\android\My-Android\AndroidWidget\ListView\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.3.0_dcc6de2f577aaef7d35f0e4dfc893f17baa7c99e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\43715\Desktop\android\My-Android\AndroidWidget\ListView\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="70f23cb87278f89aa51e6f57e8f0fd5266572d95">
+        <dex dex="C:\Users\43715\Desktop\android\My-Android\AndroidWidget\ListView\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.3.0_0b888e47771451e60ebffb55e5fd5a12f09ca96b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\43715\Desktop\android\My-Android\AndroidWidget\ListView\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="43a816dcdadd1b677d9a0ad120904b7105be58a0">
+        <dex dex="C:\Users\43715\Desktop\android\My-Android\AndroidWidget\ListView\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_8d3e209cb4edd9059f4a4ede3f82357021c4fdd5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\43715\Desktop\android\My-Android\AndroidWidget\ListView\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9ba7dd7e59b7258e672680625085221c7d325c2a">
+        <dex dex="C:\Users\43715\Desktop\android\My-Android\AndroidWidget\ListView\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_c0f1e681f30720b4c7d1a99a848e523df73f2ba1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\43715\Desktop\android\My-Android\AndroidWidget\ListView\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="518768f3200963fbfec652f498da2c9d39245234">
+        <dex dex="C:\Users\43715\Desktop\android\My-Android\AndroidWidget\ListView\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.3.0_54edef5c25a52ffa6560da98172f59f454e6ffa7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\43715\Desktop\android\My-Android\AndroidWidget\ListView\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d6a04527c17597019dad82777c5094a3d60d1c33">
+        <dex dex="C:\Users\43715\Desktop\android\My-Android\AndroidWidget\ListView\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.3.0_5943eff7be94c5d093ef2177210794343ad81578\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\43715\Desktop\android\My-Android\AndroidWidget\ListView\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="425c7b17887e5c3f8cbdf67ba171bc246f29b42c">
+        <dex dex="C:\Users\43715\Desktop\android\My-Android\AndroidWidget\ListView\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.3.0_2a79ce1b1ae1606a46417ce0dd978780d8162f7c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\43715\Desktop\android\My-Android\AndroidWidget\ListView\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="93c1199fcb0a34b980e6fff8350daff62e696ec2">
+        <dex dex="C:\Users\43715\Desktop\android\My-Android\AndroidWidget\ListView\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.3.0_435fbc3d7e20d7c3a402a10945b96a2b0b2057ec\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\43715\Desktop\android\My-Android\AndroidWidget\ListView\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\43715\Desktop\android\My-Android\AndroidWidget\ListView\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.3.0_fde1b744f56a0f34ee6ae8d228d16d1bc80ec789\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\43715\Desktop\android\My-Android\AndroidWidget\ListView\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="93c10d68ab5ea070f15782ae6d3a28d1f1d8f45e">
+        <dex dex="C:\Users\43715\Desktop\android\My-Android\AndroidWidget\ListView\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.3.0_4effa503135b28a6a81cb71b7f8541e9d5dcb2f7\classes.dex" />
+    </item>
+
+</items>
