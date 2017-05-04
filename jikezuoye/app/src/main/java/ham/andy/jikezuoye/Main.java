@@ -2,10 +2,17 @@ package ham.andy.jikezuoye;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Layout;
+import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -32,6 +39,7 @@ import java.util.Map;
 
 public class Main extends Activity {
     private PopupWindow popupWindow;  //从右出来的弹出框
+    private Context mContext = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +50,7 @@ public class Main extends Activity {
         actionBar.setCustomView(R.layout.main_title);   //获取自定义actionbar文件
         actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);   //显示出来
         setContentView(R.layout.main);
+        mContext = this;
 
         /*点击头像右边弹出框的实现*/
         ImageView touxiang = (ImageView)findViewById(R.id.touxiang);
@@ -51,6 +60,8 @@ public class Main extends Activity {
                 initPopupWindow();  //初始化类
             }
         });
+
+
 
         /*点击右边的十字架出现操作按钮*/
         final ImageView caozuo = (ImageView)findViewById(R.id.caozuo);
@@ -108,6 +119,27 @@ public class Main extends Activity {
         popupWindow.showAtLocation(getLayoutInflater().inflate(R.layout.activity_main, null), Gravity.LEFT, 0, 500);  //设置弹出框，gravity是弹出的方向
         //设置背景半透明
         backgroundAlpha(0.5f);
+
+
+        /*注销按钮，右弹出框的监听时间，如果只是一般的用inflate来获取的话是不行的，inflate的作用就是获取到xml，
+        这里是获取别的xml文件，取出对应的id，但是inflate就但存是获取对应的xml，是不能对其操作的，所以用setFocusableInTouchMode方法，
+        先获取到这个弹出框的焦点，然后再做监听事件*/
+        popupWindowView.setFocusableInTouchMode(true);
+        TextView zhuxiao = (TextView)popupWindowView.findViewById(R.id.zhanghaozhuxiao);
+        zhuxiao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent logoutIntent = new Intent(Main.this, MainActivity.class);
+                logoutIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(logoutIntent);
+                finish();
+            }
+        });
+
+
+
+
+
         //关闭事件
         popupWindow.setOnDismissListener(new Main.popupDismissListener());  //将透明度改回来
         popupWindowView.setOnTouchListener(new View.OnTouchListener() {
@@ -122,6 +154,7 @@ public class Main extends Activity {
                 return false;
             }
         });
+
     }
     /**
      * 设置添加屏幕的背景透明度

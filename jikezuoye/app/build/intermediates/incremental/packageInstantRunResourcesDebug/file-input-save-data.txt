@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu May 04 15:49:51 CST 2017
+#Thu May 04 16:44:21 CST 2017
 210.set=ANDROID_RESOURCE
 14.set=ANDROID_RESOURCE
 180.file=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-v21\\abc_ratingbar_indicator_material.xml

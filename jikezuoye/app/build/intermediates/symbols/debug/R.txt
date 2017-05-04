@@ -595,13 +595,12 @@ int id media_actions 0x7f0b0070
 int id middle 0x7f0b001c
 int id multiply 0x7f0b0014
 int id never 0x7f0b0020
-int id news 0x7f0b0081
 int id none 0x7f0b000e
 int id normal 0x7f0b000a
 int id notification_background 0x7f0b0079
 int id notification_main_column 0x7f0b0073
 int id notification_main_column_container 0x7f0b0072
-int id open 0x7f0b0082
+int id open 0x7f0b0081
 int id parentPanel 0x7f0b0030
 int id passwd 0x7f0b0063
 int id password 0x7f0b005b

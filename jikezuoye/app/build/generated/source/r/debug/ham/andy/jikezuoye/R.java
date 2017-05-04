@@ -1913,13 +1913,12 @@ containing a value of this type.
         public static final int middle=0x7f0b001c;
         public static final int multiply=0x7f0b0014;
         public static final int never=0x7f0b0020;
-        public static final int news=0x7f0b0081;
         public static final int none=0x7f0b000e;
         public static final int normal=0x7f0b000a;
         public static final int notification_background=0x7f0b0079;
         public static final int notification_main_column=0x7f0b0073;
         public static final int notification_main_column_container=0x7f0b0072;
-        public static final int open=0x7f0b0082;
+        public static final int open=0x7f0b0081;
         public static final int parentPanel=0x7f0b0030;
         public static final int passwd=0x7f0b0063;
         public static final int password=0x7f0b005b;
