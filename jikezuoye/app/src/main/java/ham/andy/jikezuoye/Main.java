@@ -12,15 +12,23 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.PopupWindow;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.view.ViewGroup.LayoutParams;
 
 import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Main extends Activity {
     private PopupWindow popupWindow;  //从右出来的弹出框
@@ -43,6 +51,7 @@ public class Main extends Activity {
                 initPopupWindow();  //初始化类
             }
         });
+
         /*点击右边的十字架出现操作按钮*/
         final ImageView caozuo = (ImageView)findViewById(R.id.caozuo);
         caozuo.setOnClickListener(new View.OnClickListener() {
@@ -52,24 +61,18 @@ public class Main extends Activity {
             }
         });
         /*点击用户跳转到不同的聊天页面*/
-        LinearLayout linear = null;
-        linear = (LinearLayout)findViewById(R.id.linear);
-        TextView[] text = new TextView[5];
-        TextView fengexian = new TextView(this);
-        fengexian.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, 1));
-        fengexian.setBackgroundColor(Color.GRAY);
-        linear.addView(fengexian);
-        for(int i=0; i < 5; i++) {
-            // 第一个参数为宽的设置，第二个参数为高的设置。
-            text[i] = new TextView(this);
-            text[i].setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, 60));
-            text[i].setText("第一项");
-            //设置居中
-            text[i].setGravity(Gravity.CENTER_VERTICAL);
-            linear.addView(text[i]);
-            //插入分割线
+        //生成设配器，数组===》listItem
+        ListView listview = null;
+        listview = (ListView)findViewById(R.id.MyListView);
 
-        }
+        SimpleAdapter adapter = new SimpleAdapter(this, getData(),   //数据来源
+                                                  R.layout.my_listitem,   //ListItem的xml实现
+                                                  new String[]{"title", "img"},   //动态数组与ListItem对应的子项
+                                                  new int[]{R.id.title, R.id.img});  //ListItem的XML文件里面的id
+        listview.setAdapter(adapter);//启动并显示设配器
+
+
+
     }
 
 
@@ -147,4 +150,44 @@ public class Main extends Activity {
         });
         popupMenu.show();
     }
+
+
+    /* 主页数据显示，listitem的函数实现*/
+    //List<Map<String, Object>> items = new ArrayList<Map<String, Object>>(); 是定义一个List类型的变量，list里面存放的是一个Map，而Map的key是一个String类型，Map的value是Object类型,Map是一个接口 代表一个key-value 键值对
+    private List<Map<String, Object>> getData() {
+        List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+        Map<String, Object> map = new HashMap<String, Object>();   //基于哈希表的map，用来存取数据，
+        map.put("title", "第一个人");
+        map.put("img", R.drawable.a);
+        list.add(map);
+
+        map = new HashMap<String, Object>();
+        map.put("title", "第二个人");
+        map.put("img", R.drawable.a);
+        list.add(map);
+
+        map = new HashMap<String, Object>();
+        map.put("title", "第三个人");
+        map.put("img", R.drawable.a);
+        list.add(map);
+
+        return list;
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

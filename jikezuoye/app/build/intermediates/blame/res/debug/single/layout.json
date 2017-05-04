@@ -4,6 +4,10 @@
         "source": "C:\\Users\\43715\\Desktop\\android\\jikezuoye\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.0\\res\\layout\\abc_action_bar_title_item.xml"
     },
     {
+        "merged": "C:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\merged\\debug\\layout\\my_listitem.xml",
+        "source": "C:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\src\\main\\res\\layout\\my_listitem.xml"
+    },
+    {
         "merged": "C:\\Users\\43715\\Desktop\\android\\jikezuoye\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
         "source": "C:\\Users\\43715\\Desktop\\android\\jikezuoye\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.0\\res\\layout\\abc_action_menu_layout.xml"
     },
