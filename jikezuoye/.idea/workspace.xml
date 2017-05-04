@@ -101,8 +101,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ham/andy/jikezuoye/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="210" column="38" selection-start-line="210" selection-start-column="38" selection-end-line="210" selection-end-column="38" />
+            <state relative-caret-position="243">
+              <caret line="292" column="98" selection-start-line="292" selection-start-column="98" selection-end-line="292" selection-end-column="98" />
               <folding>
                 <element signature="e#1624#1645#0" expanded="true" />
                 <element signature="e#1720#1736#0" expanded="true" />
@@ -111,12 +111,14 @@
                 <element signature="method#initPopupWindow#0;class#Main#0" expanded="false" />
                 <element signature="docComment;method#backgroundAlpha#0;class#Main#0" expanded="false" />
                 <element signature="method#backgroundAlpha#0;class#Main#0" expanded="false" />
-                <element signature="e#7898#9250#0" expanded="true" />
-                <element signature="e#8416#9162#0" expanded="true" />
-                <element signature="e#9161#9162#0" expanded="true" />
-                <element signature="e#9249#9250#0" expanded="true" />
+                <element signature="e#7899#9251#0" expanded="true" />
+                <element signature="e#8417#9163#0" expanded="true" />
+                <element signature="e#9162#9163#0" expanded="true" />
+                <element signature="e#9250#9251#0" expanded="true" />
                 <element signature="e#10420#10421#0" expanded="true" />
                 <element signature="e#10486#10487#0" expanded="true" />
+                <element signature="e#12082#12400#0" expanded="true" />
+                <element signature="e#12399#12400#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2299,7 +2301,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32820514" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32820514" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32820514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2326,7 +2328,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/ham/andy/jikezuoye/Main.java</url>
-          <line>110</line>
+          <line>111</line>
           <properties />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -2337,7 +2339,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/ham/andy/jikezuoye/Main.java</url>
-          <line>75</line>
+          <line>76</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
@@ -2400,12 +2402,14 @@
             <element signature="method#initPopupWindow#0;class#Main#0" expanded="false" />
             <element signature="docComment;method#backgroundAlpha#0;class#Main#0" expanded="false" />
             <element signature="method#backgroundAlpha#0;class#Main#0" expanded="false" />
-            <element signature="e#7898#9250#0" expanded="true" />
-            <element signature="e#8416#9162#0" expanded="true" />
-            <element signature="e#9161#9162#0" expanded="true" />
-            <element signature="e#9249#9250#0" expanded="true" />
+            <element signature="e#7899#9251#0" expanded="true" />
+            <element signature="e#8417#9163#0" expanded="true" />
+            <element signature="e#9162#9163#0" expanded="true" />
+            <element signature="e#9250#9251#0" expanded="true" />
             <element signature="e#10420#10421#0" expanded="true" />
             <element signature="e#10486#10487#0" expanded="true" />
+            <element signature="e#12082#12400#0" expanded="true" />
+            <element signature="e#12399#12400#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2638,8 +2642,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ham/andy/jikezuoye/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="210" column="38" selection-start-line="210" selection-start-column="38" selection-end-line="210" selection-end-column="38" />
+        <state relative-caret-position="243">
+          <caret line="292" column="98" selection-start-line="292" selection-start-column="98" selection-end-line="292" selection-end-column="98" />
           <folding>
             <element signature="e#1624#1645#0" expanded="true" />
             <element signature="e#1720#1736#0" expanded="true" />
@@ -2648,12 +2652,14 @@
             <element signature="method#initPopupWindow#0;class#Main#0" expanded="false" />
             <element signature="docComment;method#backgroundAlpha#0;class#Main#0" expanded="false" />
             <element signature="method#backgroundAlpha#0;class#Main#0" expanded="false" />
-            <element signature="e#7898#9250#0" expanded="true" />
-            <element signature="e#8416#9162#0" expanded="true" />
-            <element signature="e#9161#9162#0" expanded="true" />
-            <element signature="e#9249#9250#0" expanded="true" />
+            <element signature="e#7899#9251#0" expanded="true" />
+            <element signature="e#8417#9163#0" expanded="true" />
+            <element signature="e#9162#9163#0" expanded="true" />
+            <element signature="e#9250#9251#0" expanded="true" />
             <element signature="e#10420#10421#0" expanded="true" />
             <element signature="e#10486#10487#0" expanded="true" />
+            <element signature="e#12082#12400#0" expanded="true" />
+            <element signature="e#12399#12400#0" expanded="true" />
           </folding>
         </state>
       </provider>

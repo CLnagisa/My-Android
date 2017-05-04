@@ -47,6 +47,7 @@ public class Main extends Activity {
     //List<Map<String, Object>> items = new ArrayList<Map<String, Object>>(); 是定义一个List类型的变量，list里面存放的是一个Map，而Map的key是一个String类型，Map的value是Object类型,Map是一个接口 代表一个key-value 键值对
     private List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();      //用全局来保存，实现增加和删除
     private Map<String, Object> map = new HashMap<String, Object>();   //基于哈希表的map，用来存取数据，
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -231,7 +232,6 @@ public class Main extends Activity {
         map.put("title", "第一个人");
         map.put("img", R.drawable.a);
         list.add(map);
-
         return list;
     }
     //继承BaseAdapter， 写自己的adapter
@@ -268,7 +268,7 @@ public class Main extends Activity {
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(final int position, View convertView, ViewGroup parent) {
             //获取一个在数据集中指定索引的视图来显示数据
             ViewHolder holder = null;
             //如果缓存converView为空，则需创建View
@@ -290,11 +290,14 @@ public class Main extends Activity {
             holder.button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    //删除对应的view，list.remove(position)是删除哈希表的数据，notifyDataSetChanged()是告知数据被改变需要更新。
+                    list.remove(position);
+                    notifyDataSetChanged();
                 }
             });
             return convertView;
         }
+
 
     }
     /**********************************************************主页面的数据显示和listview应用函数结束*************************************************/
