@@ -19,6 +19,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -35,11 +36,16 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
 
 public class Main extends Activity {
     private PopupWindow popupWindow;  //从右出来的弹出框
     private Context mContext = null;
+    private List<Map<String, Object>> myData;  //listitem用
+    //List<Map<String, Object>> items = new ArrayList<Map<String, Object>>(); 是定义一个List类型的变量，list里面存放的是一个Map，而Map的key是一个String类型，Map的value是Object类型,Map是一个接口 代表一个key-value 键值对
+    private List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();      //用全局来保存，实现增加和删除
+    private Map<String, Object> map = new HashMap<String, Object>();   //基于哈希表的map，用来存取数据，
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,20 +77,32 @@ public class Main extends Activity {
                 showPopupMenu(caozuo);
             }
         });
+
+
         /*点击用户跳转到不同的聊天页面*/
         //生成设配器，数组===》listItem
         ListView listview = null;
         listview = (ListView)findViewById(R.id.MyListView);
 
-        SimpleAdapter adapter = new SimpleAdapter(this, getData(),   //数据来源
+/*        SimpleAdapter adapter = new SimpleAdapter(this, getData(),   //数据来源
                                                   R.layout.my_listitem,   //ListItem的xml实现
                                                   new String[]{"title", "img"},   //动态数组与ListItem对应的子项
                                                   new int[]{R.id.title, R.id.img});  //ListItem的XML文件里面的id
-        listview.setAdapter(adapter);//启动并显示设配器
-
+        listview.setAdapter(adapter);//启动并显示设配器*/
+        /*用BaseAdapter并重写BaseAdapter类来实现*/
+        myData = getData();
+        MyAdapter adapter = new MyAdapter(this);
+        listview.setAdapter(adapter);
 
 
     }
+
+
+
+
+
+
+
 
 
 
@@ -137,9 +155,6 @@ public class Main extends Activity {
         });
 
 
-
-
-
         //关闭事件
         popupWindow.setOnDismissListener(new Main.popupDismissListener());  //将透明度改回来
         popupWindowView.setOnTouchListener(new View.OnTouchListener() {
@@ -177,6 +192,7 @@ public class Main extends Activity {
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
+
                 Toast.makeText(getApplicationContext(), item.getTitle(), Toast.LENGTH_SHORT).show();
                 return false;
             }
@@ -185,27 +201,85 @@ public class Main extends Activity {
     }
 
 
+
+
+
+
     /* 主页数据显示，listitem的函数实现*/
-    //List<Map<String, Object>> items = new ArrayList<Map<String, Object>>(); 是定义一个List类型的变量，list里面存放的是一个Map，而Map的key是一个String类型，Map的value是Object类型,Map是一个接口 代表一个key-value 键值对
-    private List<Map<String, Object>> getData() {
-        List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
-        Map<String, Object> map = new HashMap<String, Object>();   //基于哈希表的map，用来存取数据，
+       private List<Map<String, Object>> getData() {
+        //添加数据用的，一个哈希map
+        map = new HashMap<String, Object>();
         map.put("title", "第一个人");
-        map.put("img", R.drawable.a);
-        list.add(map);
-
-        map = new HashMap<String, Object>();
-        map.put("title", "第二个人");
-        map.put("img", R.drawable.a);
-        list.add(map);
-
-        map = new HashMap<String, Object>();
-        map.put("title", "第三个人");
         map.put("img", R.drawable.a);
         list.add(map);
 
         return list;
     }
+    //继承BaseAdapter， 写自己的adapter
+   static class ViewHolder {
+        public ImageView img;
+        public TextView title;
+        public Button button;
+    }  //创建一个静态类，后面要用
+    public class MyAdapter extends BaseAdapter {
+        private LayoutInflater yonghu;
+
+        public MyAdapter(Context context) {
+            this.yonghu = LayoutInflater.from(context);
+        }
+        @Override
+        public int getCount() {
+            // TODO Auto-generated method stub
+            //在此适配器中所代表的数据集中的条目数
+            return myData.size();
+        }
+
+        @Override
+        public Object getItem(int arg0) {
+            // TODO Auto-generated method stub
+            //获取数据集中与指定索引对应的数据项
+            return null;
+        }
+
+        @Override
+        public long getItemId(int arg0) {
+            // TODO Auto-generated method stub
+            //取在列表中与指定索引对应的行id
+            return 0;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            //获取一个在数据集中指定索引的视图来显示数据
+            ViewHolder holder = null;
+            //如果缓存converView为空，则需创建View
+            if(convertView == null) {
+                holder = new ViewHolder();
+                convertView = yonghu.inflate(R.layout.my_listitem, null);
+                holder.img = (ImageView)convertView.findViewById(R.id.img);
+                holder.title = (TextView)convertView.findViewById(R.id.title);
+                holder.button = (Button)convertView.findViewById(R.id.view_btn);
+                //将设置好的布局保存到缓存中，并将其设置在Tag里，以便取出Tag
+                convertView.setTag(holder);
+            } else {
+                //缓存有，直接取出
+                holder = (ViewHolder)convertView.getTag();
+            }
+            //设置创建的img数据为myData的第一个数据
+            holder.img.setBackgroundResource((Integer)myData.get(position).get("img"));
+            holder.title.setText((String)myData.get(position).get("title"));
+            holder.button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
+            return convertView;
+        }
+
+    }
+
+
 
 }
 
