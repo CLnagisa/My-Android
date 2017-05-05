@@ -20,8 +20,9 @@
             android:theme="@style/myAppTheme1"
             android:label="主页面" />
         <activity
-            android:name=".youtanchukuang"
-            android:label=""
+            android:name=".chat"
+            android:theme="@style/myAppTheme1"
+            android:label="聊天界面"
             >
 
         </activity>

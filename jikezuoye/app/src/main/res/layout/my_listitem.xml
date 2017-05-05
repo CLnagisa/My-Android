@@ -1,37 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--listview的自定义样式，用的simpleAdapter-->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
     android:padding="10dp">
 
 
-    <ImageView android:id="@+id/img"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="5px"
-        android:layout_alignParentLeft="true"
-        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        >
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5px"
+            android:background="@drawable/a"
+            />
+    </LinearLayout>
 
-    <Button android:id="@+id/view_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="删除"
-        android:layout_gravity="center_vertical|right"
-        android:layout_alignTop="@+id/img"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
 
     <TextView android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:textSize="16dp"
-            android:layout_alignBaseline="@+id/view_btn"
-            android:layout_alignBottom="@+id/view_btn"
-            android:layout_toRightOf="@+id/img"
-            android:layout_toEndOf="@+id/img"
-            android:layout_marginLeft="12dp"
-            android:layout_marginStart="12dp" />
-</RelativeLayout>
+        android:layout_width="230dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:paddingLeft="20dp"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:textSize="16dp"
+    />
+    <Button android:id="@+id/view_btn"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:text="删除"
+        android:layout_gravity="center_vertical|right"
+     />
+
+
+</LinearLayout>

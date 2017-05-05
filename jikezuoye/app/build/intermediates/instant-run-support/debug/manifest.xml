@@ -30,8 +30,9 @@
             android:label="主页面"
             android:theme="@style/myAppTheme1" />
         <activity
-            android:name="ham.andy.jikezuoye.youtanchukuang"
-            android:label="" >
+            android:name="ham.andy.jikezuoye.chat"
+            android:label="聊天界面"
+            android:theme="@style/myAppTheme1" >
         </activity>
     </application>
 

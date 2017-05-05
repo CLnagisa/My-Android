@@ -287,12 +287,35 @@ public class Main extends Activity {
             //设置创建的img数据为myData的第一个数据
             holder.img.setBackgroundResource((Integer)myData.get(position).get("img"));
             holder.title.setText((String)myData.get(position).get("title"));
+            final String aaa = (String)myData.get(position).get("title");
             holder.button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     //删除对应的view，list.remove(position)是删除哈希表的数据，notifyDataSetChanged()是告知数据被改变需要更新。
                     list.remove(position);
                     notifyDataSetChanged();
+                }
+            });
+            //监视每一个listview，点击的时候跳转到对应的activity
+            holder.img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent();
+                    //传递参数
+                    intent.putExtra("title", aaa);
+                    intent.setClass(Main.this, chat.class);
+                    startActivity(intent);
+                }
+            });
+            //监视每一个listview，点击的时候跳转到对应的activity
+            holder.title.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent();
+                    //传递参数
+                    intent.putExtra("title", aaa);
+                    intent.setClass(Main.this, chat.class);
+                    startActivity(intent);
                 }
             });
             return convertView;

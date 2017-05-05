@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\src\main\AndroidManifest.xml:2:1-30:12
+ADDED from C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\src\main\AndroidManifest.xml:2:1-31:12
 	package
 		ADDED from C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\src\main\AndroidManifest.xml:3:5-33
 		INJECTED from C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\src\main\AndroidManifest.xml
@@ -14,7 +14,7 @@ ADDED from C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\src\main\Andr
 		INJECTED from C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\src\main\AndroidManifest.xml
 application
-ADDED from C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\src\main\AndroidManifest.xml:5:5-28:19
+ADDED from C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\src\main\AndroidManifest.xml:5:5-29:19
 MERGED from [com.android.support:appcompat-v7:25.3.0] C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.0\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-v4:25.3.0] C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.0\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-compat:25.3.0] C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.0\AndroidManifest.xml:29:5-20
@@ -54,12 +54,14 @@ ADDED from C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\src\main\Andr
 		ADDED from C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\src\main\AndroidManifest.xml:20:13-47
 	android:name
 		ADDED from C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\src\main\AndroidManifest.xml:19:13-33
-activity#ham.andy.jikezuoye.youtanchukuang
-ADDED from C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\src\main\AndroidManifest.xml:22:9-27:20
+activity#ham.andy.jikezuoye.chat
+ADDED from C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\src\main\AndroidManifest.xml:22:9-28:20
 	android:label
-		ADDED from C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\src\main\AndroidManifest.xml:24:13-29
+		ADDED from C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\src\main\AndroidManifest.xml:25:13-33
+	android:theme
+		ADDED from C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\src\main\AndroidManifest.xml:24:13-47
 	android:name
-		ADDED from C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\src\main\AndroidManifest.xml:23:13-43
+		ADDED from C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\src\main\AndroidManifest.xml:23:13-33
 uses-sdk
 INJECTED from C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:25.3.0] C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.0\AndroidManifest.xml:21:5-23:78
