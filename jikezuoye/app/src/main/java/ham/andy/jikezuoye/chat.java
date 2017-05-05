@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -26,6 +27,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * Created by CL on 2017/5/4.
@@ -35,12 +37,7 @@ public class chat extends Activity{
 
     private Context mContext = null;   //上下文
 
-    private List<Map<String, Object>> myData;  //listitem用
-    //List<Map<String, Object>> items = new ArrayList<Map<String, Object>>(); 是定义一个List类型的变量，list里面存放的是一个Map，而Map的key是一个String类型，Map的value是Object类型,Map是一个接口 代表一个key-value 键值对
-    private List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();      //用全局来保存，实现增加和删除
-    private Map<String, Object> map = new HashMap<String, Object>();   //基于哈希表的map，用来存取数据，
-
-
+    ArrayList<HashMap<String, Object>> chatList = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +45,7 @@ public class chat extends Activity{
         setContentView(R.layout.chat);
         getActionBar().hide();  //不显示actionBar
 
-        mContext = null;
+        mContext = this;
 
         /**********更改标题*********/
         Intent intent = getIntent();    //获取传过来的数据
@@ -72,62 +69,63 @@ public class chat extends Activity{
             }
         });
 
+        /****************************************聊天记录显示****************************************/
+        chatList = new ArrayList<HashMap<String, Object>>();
+        addTextToList("自己的第一", 0);
+        addTextToList("自己的第二", 0);
+        addTextToList("他人的第一", 1);
+        addTextToList("他人的第二", 1);
 
+        final EditText editText = (EditText)findViewById(R.id.chat_edittext);
+        final ListView chatListView = (ListView)findViewById(R.id.chat_list);
+        final MyChatAdapter adapter = new MyChatAdapter(this, chatList);
 
-
-        ListView listview = null;              //生成设配器，数组===》listItem
-        listview = (ListView)findViewById(R.id.chat_list);
-        //用BaseAdapter并重写BaseAdapter类来实现
-        myData = getData();
-        MyAdapter adapter = new MyAdapter(this);
-        listview.setAdapter(adapter);
-
+        /****************************************发送事件*******************************************/
+        Button send = (Button)findViewById(R.id.chat_send);
+        send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //获取到输入框的值
+                String a = editText.getText().toString();
+                if(a.length()==0)
+                    return;
+                editText.setText("");
+                //添加到哈希表
+                addTextToList(a, 0);
+                //通知说数据更改了，
+                adapter.notifyDataSetChanged();
+                //定位到到listview中的view中的最后一个
+                chatListView.setSelection(chatList.size()-1);
+            }
+        });
+        chatListView.setAdapter(adapter);
 
     }
 
 
-
     /********************************************显示数据的函数开始*******************************************/
     /********************************************显示数据的函数开始*******************************************/
-    /* 主页数据显示，listitem的函数实现*/
-    private List<Map<String, Object>> getData() {
-        //获取数据用的，一个哈希map
-
-        map = new HashMap<String, Object>();
-        map.put("mysely", "1");
-        map.put("chat_list_right_text", "自己第一");
-        list.add(map);
-        map = new HashMap<String, Object>();
-        map.put("mysely", "0");
-        map.put("chat_list_left_text", "他人第一");
-        list.add(map);
-        map = new HashMap<String, Object>();
-        map.put("mysely", "1");
-        map.put("chat_list_right_text", "自己第二");
-        list.add(map);
-        map = new HashMap<String, Object>();
-        map.put("mysely", "0");
-        map.put("chat_list_left_text", "他人第二");
-        list.add(map);
-        return list;
+    //添加数据进哈希表
+    protected void addTextToList(String text, int who){
+        HashMap<String,Object> map=new HashMap<String,Object>();
+        map.put("person",who );
+        map.put("text", text);
+        chatList.add(map);
     }
     //继承BaseAdapter， 写自己的adapter
-    static class ViewHolder {
-        public ImageView img;
-        public TextView title;
-        public Button button;
-    }  //创建一个静态类，后面要用
-    public class MyAdapter extends BaseAdapter {
-        private LayoutInflater yonghu;
-
-        public MyAdapter(Context context) {
-            this.yonghu = LayoutInflater.from(context);
+    public class MyChatAdapter extends BaseAdapter {
+        Context context = null;
+        ArrayList<HashMap<String, Object>> chatList = null;
+        public MyChatAdapter(Context context, ArrayList<HashMap<String, Object>> chatList) {
+            super();
+            this.chatList = chatList;
+            this.context = context;
         }
         @Override
         public int getCount() {
             // TODO Auto-generated method stub
             //在此适配器中所代表的数据集中的条目数
-            return myData.size();
+            return chatList.size();
         }
 
         @Override
@@ -138,47 +136,38 @@ public class chat extends Activity{
         }
 
         @Override
-        public long getItemId(int arg0) {
+        public long getItemId(int position) {
             // TODO Auto-generated method stub
             //取在列表中与指定索引对应的行id
-            return 0;
+            return position;
+        }
+
+        class ViewHolder {
+            public TextView textView = null;
         }
 
         @Override
         public View getView(final int position, View convertView, ViewGroup parent) {
             //设置是对面发来的还是自己发的
+            /* 这里不能加缓存，找了一晚上的错误。。。。因为像第二个一样加了缓存的话，不能准确的判断是要用哪一个
+               convertView = LayoutInflater.from(context).inflate(layout[a==0?0:1], null);造成错误    */
             ViewHolder holder = null;
+            //两个页面
+            int[] layout = {R.layout.chat_listview_right,R.layout.chat_listview_left};
+            //两个页面对应的不同的text名字
+            int[] to = {R.id.chatlist_text_me, R.id.chatlist_text_other};
+            String[] from = {"chat_list_right_text", "chat_list_left_text"};
+            int a = (Integer)chatList.get(position).get("person");
+            //用person来判断，是0的话就是自己发的了
+            convertView = LayoutInflater.from(context).inflate(layout[a==0?0:1], null);
+            holder = new ViewHolder();
+            holder.textView = (TextView) convertView.findViewById(to[a]);
+            //将设置好的布局保存到缓存中，并将其设置在Tag里，以便取出Tag
+            convertView.setTag(holder);
 
-            if(myData.get(position).get("mysely")  == "1") {
-                if (convertView == null) {
-                    holder = new ViewHolder();
-                    convertView = yonghu.inflate(R.layout.chat_listview_right, null);
-                    holder.title = (TextView) convertView.findViewById(R.id.chat_list_right_text);
-                    //将设置好的布局保存到缓存中，并将其设置在Tag里，以便取出Tag
-                    convertView.setTag(holder);
-                } else {
-                    //缓存有，直接取出
-                    holder = (ViewHolder) convertView.getTag();
-                }
-                //设置创建的img数据为myData的第一个数据
-                holder.title.setText((String) myData.get(position).get("chat_list_right_text"));
-                return convertView;
-            } else {
-                //如果缓存converView为空，则需创建View
-                if (convertView == null) {
-                    holder = new ViewHolder();
-                    convertView = yonghu.inflate(R.layout.chat_listview_left, null);
-                    holder.title = (TextView) convertView.findViewById(R.id.chat_list_left_text);
-                    //将设置好的布局保存到缓存中，并将其设置在Tag里，以便取出Tag
-                    convertView.setTag(holder);
-                } else {
-                    //缓存有，直接取出
-                    holder = (ViewHolder) convertView.getTag();
-                }
-                //设置创建的img数据为myData的第一个数据
-                holder.title.setText((String) myData.get(position).get("chat_list_left_text"));
-                return convertView;
-            }
+            //设置创建的img数据为myData的第一个数据
+            holder.textView.setText((String) chatList.get(position).get("text"));
+            return convertView;
         }
     }
     /********************************************显示数据的函数结束*******************************************/
