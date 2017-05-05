@@ -1894,8 +1894,8 @@ containing a value of this type.
         public static final int chat_list=0x7f0b006d;
         public static final int chat_list_left_img=0x7f0b006e;
         public static final int chat_list_left_text=0x7f0b006f;
-        public static final int chat_list_right_img=0x7f0b0070;
-        public static final int chat_list_right_text=0x7f0b0071;
+        public static final int chat_list_right_img=0x7f0b0071;
+        public static final int chat_list_right_text=0x7f0b0070;
         public static final int chat_title=0x7f0b0067;
         public static final int checkbox=0x7f0b003e;
         public static final int chronometer=0x7f0b0083;

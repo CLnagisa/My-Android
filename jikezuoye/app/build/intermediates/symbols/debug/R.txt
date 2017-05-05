@@ -576,8 +576,8 @@ int id chat_img 0x7f0b0065
 int id chat_list 0x7f0b006d
 int id chat_list_left_img 0x7f0b006e
 int id chat_list_left_text 0x7f0b006f
-int id chat_list_right_img 0x7f0b0070
-int id chat_list_right_text 0x7f0b0071
+int id chat_list_right_img 0x7f0b0071
+int id chat_list_right_text 0x7f0b0070
 int id chat_title 0x7f0b0067
 int id checkbox 0x7f0b003e
 int id chronometer 0x7f0b0083

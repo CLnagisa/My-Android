@@ -232,6 +232,10 @@ public class Main extends Activity {
         map.put("title", "第一个人");
         map.put("img", R.drawable.a);
         list.add(map);
+           map = new HashMap<String, Object>();
+           map.put("title", "第二个人");
+           map.put("img", R.drawable.a);
+           list.add(map);
         return list;
     }
     //继承BaseAdapter， 写自己的adapter

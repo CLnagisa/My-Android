@@ -1,4 +1,4 @@
-#Fri May 05 15:36:42 CST 2017
+#Fri May 05 20:59:44 CST 2017
 base.0=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_dde247a7d39eaadaa9fc5096a189240a780e051f
 renamed.1=classes.dex
 renamed.0=classes2.dex

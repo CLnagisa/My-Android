@@ -12,15 +12,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="70f23cb87278f89aa51e6f57e8f0fd5266572d95">
-        <dex dex="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.3.0_a5b446482698b5d5aca3f558affdfccae824f3c1\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -30,38 +21,11 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.3.0_559728c316eb7494823d74f6d9faf4709b672a08\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="5cc5ef8347a6bafa14556cbd35230aa9b3431bb0">
-        <dex dex="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.3.0_f3fdac71164e369ab0d89e2712b5b8fe4c68c7c4\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="93c1199fcb0a34b980e6fff8350daff62e696ec2">
-        <dex dex="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.3.0_73c56f4dcbe914667421686281e503ec81a5eb68\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="074dc6c8467bfff9ff21a5c0ba877bd54d926145">
+        sha1="6d2869e13dab86d43e53d80abe4c50b72efab80e">
         <dex dex="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_dde247a7d39eaadaa9fc5096a189240a780e051f\classes.dex" />
     </item>
     <item
@@ -97,8 +61,44 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="a14b60a2f575b281c896ce24220fbc361ef33c5c">
+        sha1="3a1db255dac749471c98a3bc11a96e9709dc19b9">
         <dex dex="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_0a2d28d1f59bb198b142b1847ea2d81ce2a8f35b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="70f23cb87278f89aa51e6f57e8f0fd5266572d95">
+        <dex dex="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.3.0_a5b446482698b5d5aca3f558affdfccae824f3c1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.3.0_559728c316eb7494823d74f6d9faf4709b672a08\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5cc5ef8347a6bafa14556cbd35230aa9b3431bb0">
+        <dex dex="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.3.0_f3fdac71164e369ab0d89e2712b5b8fe4c68c7c4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="93c1199fcb0a34b980e6fff8350daff62e696ec2">
+        <dex dex="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.3.0_73c56f4dcbe914667421686281e503ec81a5eb68\classes.dex" />
     </item>
     <item
         is-multidex="true"
