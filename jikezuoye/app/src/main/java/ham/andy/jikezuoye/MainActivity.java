@@ -49,6 +49,18 @@ public class MainActivity extends Activity {
         getShujuku();   //打开数据库
         db.close();
 
+        /**************************************检查登录状态**************************************/
+        getShujuku();
+        Cursor cursor = db.rawQuery("Select state From denglu Where state=1", null);
+        cursor.moveToNext();
+        if(cursor.getCount() > 0) {
+            Intent intent = new Intent();
+            intent.setClass(MainActivity.this, Main.class);
+            startActivity(intent);
+            finish();
+        }
+
+
         /**************************************登录事件*****************************************/
 
 
@@ -87,6 +99,15 @@ public class MainActivity extends Activity {
                                     }
                                 }).show();//在按键响应事件中显示此对话框
                     } else {     //都正确，实现跳转
+                        cursor = db.rawQuery("Select userName From denglu Where userName='" + user1 + "'", null);
+                        cursor.moveToNext();
+                        if(cursor.getCount() <= 0) {
+                            db.execSQL("INSERT INTO denglu VALUES (?, ?)", new Object[]{user.getText().toString(), 1});
+                        } else {
+                            db.execSQL("UPDATE state SET state=1 WHERE userName='" + user1 + "'", null);
+                        }
+                        cursor.close();
+                        db.close();
                         Intent intent = new Intent();
                         intent.setClass(MainActivity.this, Main.class);
                         startActivity(intent);
