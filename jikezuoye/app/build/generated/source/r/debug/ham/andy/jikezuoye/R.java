@@ -1934,7 +1934,7 @@ containing a value of this type.
         public static final int notification_background=0x7f0c0087;
         public static final int notification_main_column=0x7f0c0081;
         public static final int notification_main_column_container=0x7f0c0080;
-        public static final int open=0x7f0c0095;
+        public static final int open=0x7f0c0096;
         public static final int parentPanel=0x7f0c0030;
         public static final int passwd=0x7f0c0063;
         public static final int passwd1=0x7f0c0093;
@@ -1998,11 +1998,12 @@ containing a value of this type.
         public static final int view_btn=0x7f0c0077;
         public static final int withText=0x7f0c0021;
         public static final int wrap_content=0x7f0c0019;
+        public static final int yonghuming=0x7f0c0094;
         public static final int zhang=0x7f0c0058;
         public static final int zhang1=0x7f0c005f;
         public static final int zhang2=0x7f0c0090;
         public static final int zhanghao=0x7f0c0059;
-        public static final int zhanghaozhuxiao=0x7f0c0094;
+        public static final int zhanghaozhuxiao=0x7f0c0095;
         public static final int zhuce=0x7f0c0065;
     }
     public static final class integer {

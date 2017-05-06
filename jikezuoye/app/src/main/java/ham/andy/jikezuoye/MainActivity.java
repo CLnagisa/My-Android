@@ -51,7 +51,7 @@ public class MainActivity extends Activity {
 
         /**************************************检查登录状态**************************************/
         getShujuku();
-        Cursor cursor = db.rawQuery("Select state From denglu Where state=1", null);
+        Cursor cursor = db.rawQuery("Select state From denglu Where state=1", null);        //查找是否存在状态为1的，有那就是登录过，直接跳转，没有那就继续下面的操作
         cursor.moveToNext();
         if(cursor.getCount() > 0) {
             Intent intent = new Intent();
@@ -75,7 +75,6 @@ public class MainActivity extends Activity {
                 /*在要读取的列不存在的时候该方法会返回值“-1”。所以可知，以上报错可能是因为要get的列不存在，也可能是因为游标位置不对。后来发现，
                 因为我在执行这个语句前没有执行“Cursor.moveToNext();”这个函数，导致游标还位于第一位置的前面，所以索引显示为“-1”,前面加上这句就没错了。*/
                 cursor.moveToNext();       //取下一条数据，也就是下一行
-
                 if(cursor.getCount() <= 0) {     //没有查到数据的情况
                     new AlertDialog.Builder(MainActivity.this).setTitle("登录失败")//设置对话框标题
                             .setMessage("没有填写用户名或者没有该用户")//设置显示的内容
@@ -104,7 +103,7 @@ public class MainActivity extends Activity {
                         if(cursor.getCount() <= 0) {
                             db.execSQL("INSERT INTO denglu VALUES (?, ?)", new Object[]{user.getText().toString(), 1});
                         } else {
-                            db.execSQL("UPDATE state SET state=1 WHERE userName='" + user1 + "'", null);
+                            db.execSQL("UPDATE denglu SET state=1 WHERE userName='" + user1 + "'");
                         }
                         cursor.close();
                         db.close();

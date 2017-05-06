@@ -6,6 +6,8 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -34,6 +36,10 @@ import android.view.ViewGroup.LayoutParams;
 
 import org.w3c.dom.Text;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -47,6 +53,7 @@ public class Main extends Activity {
     //List<Map<String, Object>> items = new ArrayList<Map<String, Object>>(); 是定义一个List类型的变量，list里面存放的是一个Map，而Map的key是一个String类型，Map的value是Object类型,Map是一个接口 代表一个key-value 键值对
     private List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();      //用全局来保存，实现增加和删除
     private Map<String, Object> map = new HashMap<String, Object>();   //基于哈希表的map，用来存取数据，
+    private SQLiteDatabase db = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,20 +145,32 @@ public class Main extends Activity {
         backgroundAlpha(0.5f);
 
 
+        //获取数据更加用户名
+        getShujuku();
+        Cursor cursor = db.rawQuery("Select userName From denglu Where state=1", null);        //查找是否存在状态为1的，有那就是登录过，直接跳转，没有那就继续下面的操作
+        cursor.moveToNext();
+        final TextView yonghuming = (TextView)popupWindowView.findViewById(R.id.yonghuming);
+        yonghuming.setText(cursor.getString(0).toString());
+        db.close();
+        popupWindowView.setFocusableInTouchMode(true);    //获取淡出框的焦点
         /*注销按钮，右弹出框的监听时间，如果只是一般的用inflate来获取的话是不行的，inflate的作用就是获取到xml，
         这里是获取别的xml文件，取出对应的id，但是inflate就但存是获取对应的xml，是不能对其操作的，所以用setFocusableInTouchMode方法，
         先获取到这个弹出框的焦点，然后再做监听事件*/
-        popupWindowView.setFocusableInTouchMode(true);
         TextView zhuxiao = (TextView)popupWindowView.findViewById(R.id.zhanghaozhuxiao);
         zhuxiao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //注销的时候把登录的状态改为0
+                getShujuku();
+                db.execSQL("UPDATE denglu SET state=0 WHERE userName='" + yonghuming.getText().toString() + "'");
+                db.close();
                 Intent logoutIntent = new Intent(Main.this, MainActivity.class);
                 logoutIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(logoutIntent);
                 finish();
             }
         });
+
 
 
         //关闭事件
@@ -329,6 +348,42 @@ public class Main extends Activity {
     }
     /**********************************************************主页面的数据显示和listview应用函数结束*************************************************/
     /**********************************************************主页面的数据显示和listview应用函数结束*************************************************/
+
+    /********************************************判断和打开数据库文件函数开始*************************************/
+    /********************************************判断和打开数据库文件函数开始*************************************/
+    private void getShujuku(){
+        final String DATABASE_PATH="data/data/"+ this.getPackageName() + "/databases/";
+        String databaseFile=DATABASE_PATH+"mysqlite.db";
+        //创建databases目录（不存在时）
+        File file=new File(DATABASE_PATH);
+        if(!file.exists()){
+            file.mkdirs();
+        }
+        //判断数据库是否存在
+
+        File now = new File(databaseFile);
+        if (!now.exists()) {
+            //把数据库拷贝到/data/data/<package_name>/databases目录下
+            try {
+                FileOutputStream fileOutputStream = new FileOutputStream(databaseFile);       //创建写入流文件
+                //数据库放res/raw目录下
+                InputStream inputStream = getResources().openRawResource(R.raw.mysqlite);
+                byte[] buffer = new byte[1024];  //缓存二进制数据
+                int readBytes = 0;
+                while ((readBytes = inputStream.read(buffer)) != -1)     //读取流数据，每次1024个比特
+                    fileOutputStream.write(buffer, 0, readBytes);   //用流方式写
+                inputStream.close();                  //关闭打开的流文件
+                fileOutputStream.close();             //关闭可写入的流文件
+            } catch (IOException e) {
+            }
+        } else {
+
+        }
+        db = SQLiteDatabase.openOrCreateDatabase(databaseFile, null);
+    }
+    /********************************************判断和打开数据库文件函数结束*************************************/
+    /********************************************判断和打开数据库文件函数结束*************************************/
+
 
 }
 

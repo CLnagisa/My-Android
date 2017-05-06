@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat May 06 23:28:46 CST 2017
+#Sun May 07 00:30:51 CST 2017
 210.set=ANDROID_RESOURCE
 14.set=ANDROID_RESOURCE
 180.file=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\color\\abc_tint_default.xml
@@ -83,7 +83,7 @@
 237.base=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_
 135.set=ANDROID_RESOURCE
 212.base=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_
-81.file=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png
+81.file=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png
 135.base=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_
 187.base=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_
 110.base=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_
@@ -147,7 +147,7 @@
 30.file=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\notification_template_icon_group.xml
 145.set=ANDROID_RESOURCE
 213.base=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_
-82.file=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png
+82.file=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png
 136.base=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_
 188.base=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_
 111.base=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_
@@ -304,7 +304,7 @@
 71.file=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout-v11\\notification_template_big_media.xml
 125.base=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_
 223.file=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout-v11\\notification_template_big_media_narrow_custom.xml
-146.file=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png
+146.file=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png
 177.base=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_
 100.base=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_
 140.set=ANDROID_RESOURCE
@@ -478,7 +478,7 @@ count=247
 245.base=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_
 168.base=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_
 156.set=ANDROID_RESOURCE
-147.file=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png
+147.file=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png
 220.base=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_
 143.base=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_
 199.file=C\:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\color-v23\\abc_tint_spinner.xml
