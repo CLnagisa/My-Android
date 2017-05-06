@@ -58,18 +58,10 @@ public class MainActivity extends Activity {
                 /*在要读取的列不存在的时候该方法会返回值“-1”。所以可知，以上报错可能是因为要get的列不存在，也可能是因为游标位置不对。后来发现，
                 因为我在执行这个语句前没有执行“Cursor.moveToNext();”这个函数，导致游标还位于第一位置的前面，所以索引显示为“-1”,前面加上这句就没错了。*/
                 cursor.moveToNext();       //取下一条数据，也就是下一行
-                new AlertDialog.Builder(MainActivity.this).setTitle(cursor)//设置对话框标题
-                        .setMessage("没有填写或者没有改用户")//设置显示的内容
-                        .setNegativeButton("返回", new DialogInterface.OnClickListener() {//添加返回按钮
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {//响应事件
-                                // TODO Auto-generated method stub
-                                Log.i("alertdialog", " 请保存数据！");
-                            }
-                        }).show();//在按键响应事件中显示此对话框
-                /*if(cursor == null) {
+
+                if(cursor.getCount() <= 0) {     //没有查到数据的情况
                     new AlertDialog.Builder(MainActivity.this).setTitle("登录失败")//设置对话框标题
-                            .setMessage("没有填写或者没有改用户")//设置显示的内容
+                            .setMessage("没有填写用户名或者没有该用户")//设置显示的内容
                             .setNegativeButton("返回", new DialogInterface.OnClickListener() {//添加返回按钮
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {//响应事件
@@ -78,9 +70,10 @@ public class MainActivity extends Activity {
                                 }
                             }).show();//在按键响应事件中显示此对话框
                 } else {
-                    if(cursor.getString(1) == usepasswd){
+                    //这里的比较要用到qeuals才可以正常判断
+                    if(!cursor.getString(1).equals(usepasswd)){     //判断密码
                         new AlertDialog.Builder(MainActivity.this).setTitle("登录失败")//设置对话框标题
-                                .setMessage("密码错误")//设置显示的内容
+                                .setMessage("密码为空或密码错误")//设置显示的内容
                                 .setNegativeButton("返回", new DialogInterface.OnClickListener() {//添加返回按钮
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {//响应事件
@@ -88,13 +81,13 @@ public class MainActivity extends Activity {
                                         Log.i("alertdialog", " 请保存数据！");
                                     }
                                 }).show();//在按键响应事件中显示此对话框
-                    } else {
+                    } else {     //都正确，实现跳转
                         Intent intent = new Intent();
                         intent.setClass(MainActivity.this, Main.class);
                         startActivity(intent);
                         finish();
                     }
-                }*/
+                }
 
                 cursor.close();
                 db.close();
