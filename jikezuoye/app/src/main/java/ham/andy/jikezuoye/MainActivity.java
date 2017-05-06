@@ -14,18 +14,21 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
 
 public class MainActivity extends Activity {
     private Button button = null;
     private EditText user = null;
     private EditText passwd = null;
     private SQLiteDatabase db = null;
+    private Context mContext = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +45,9 @@ public class MainActivity extends Activity {
         user = (EditText)findViewById(R.id.user);
         passwd = (EditText)findViewById(R.id.passwd);
 
-
+        mContext = this;
+        getShujuku();   //打开数据库
+        db.close();
 
         /**************************************登录事件*****************************************/
 
@@ -95,14 +100,24 @@ public class MainActivity extends Activity {
 
         });
 
-        /********************************************注册事件**********************************/
+        /********************************************跳转到注册页面**********************************/
         TextView zhuce = (TextView)findViewById(R.id.zhuce);
         zhuce.setText(Html.fromHtml("<u>" + "注册" + "</>" ));        //添加下划线
+        zhuce.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //跳转到注册页面
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, regist.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
 
-
+    /********************************************判断和打开数据库文件函数开始*************************************/
+    /********************************************判断和打开数据库文件函数开始*************************************/
     private void getShujuku(){
         final String DATABASE_PATH="data/data/"+ this.getPackageName() + "/databases/";
         String databaseFile=DATABASE_PATH+"mysqlite.db";
@@ -113,7 +128,6 @@ public class MainActivity extends Activity {
         }
         //判断数据库是否存在
         File now = new File(databaseFile);
-        now.delete();           //暂时测试用，记得删掉
         if (!now.exists()) {
             //把数据库拷贝到/data/data/<package_name>/databases目录下
             try {
@@ -128,11 +142,10 @@ public class MainActivity extends Activity {
                 fileOutputStream.close();             //关闭可写入的流文件
             } catch (IOException e) {
             }
-        } else {
-
         }
         db = SQLiteDatabase.openOrCreateDatabase(databaseFile, null);
     }
-
+    /********************************************判断和打开数据库文件函数结束*************************************/
+    /********************************************判断和打开数据库文件函数结束*************************************/
 
 }

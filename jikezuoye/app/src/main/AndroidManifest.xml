@@ -26,6 +26,10 @@
             >
 
         </activity>
+        <activity
+            android:name=".regist"
+            android:label="注册"
+            />
     </application>
 
 </manifest>

@@ -70,49 +70,49 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/zhang1"
-        android:layout_width="match_parent"
+    android:id="@+id/zhang1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape"
+    android:layout_marginBottom="10dp"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:layout_below="@id/zhang">
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="40dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/shape"
-        android:layout_marginBottom="10dp"
+        android:text="密码"
+        android:textSize="15sp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@id/zhang">
-        <TextView
-            android:id="@+id/text2"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:text="密码"
-            android:textSize="15sp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignTop="@+id/text1"
-            android:layout_above="@+id/password" />
-        <View
-            android:id="@+id/view2"
-            android:layout_width="2dp"
-            android:layout_height="40dp"
-            android:layout_centerVertical="true"
-            android:textSize="15sp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="1dp"
-            android:layout_marginRight="2dp"
-            android:layout_toRightOf="@+id/textView1"
-            android:background="#EEEFFF" />
+        android:layout_alignTop="@+id/text1"
+        android:layout_above="@+id/password" />
+    <View
+        android:id="@+id/view2"
+        android:layout_width="2dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:textSize="15sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="2dp"
+        android:layout_toRightOf="@+id/textView1"
+        android:background="#EEEFFF" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:textSize="15sp"
-            android:hint="请输入密码"
-            android:background="@drawable/shape"
-            android:id="@+id/passwd"
-            android:layout_below="@+id/linearLayout"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:textSize="15sp"
+        android:hint="请输入密码"
+        android:background="@drawable/shape"
+        android:id="@+id/passwd"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-    </LinearLayout>
+</LinearLayout>
 
     <Button
         android:text="登录"
@@ -127,7 +127,7 @@
     <TextView
         android:text="注册"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginTop="14dp"
         android:id="@+id/zhuce"
         android:textSize="20dp"

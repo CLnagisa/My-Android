@@ -1934,13 +1934,16 @@ containing a value of this type.
         public static final int notification_background=0x7f0c0087;
         public static final int notification_main_column=0x7f0c0081;
         public static final int notification_main_column_container=0x7f0c0080;
-        public static final int open=0x7f0c008f;
+        public static final int open=0x7f0c0095;
         public static final int parentPanel=0x7f0c0030;
         public static final int passwd=0x7f0c0063;
+        public static final int passwd1=0x7f0c0093;
         public static final int password=0x7f0c005b;
         public static final int progress_circular=0x7f0c0005;
         public static final int progress_horizontal=0x7f0c0006;
         public static final int radio=0x7f0c0040;
+        public static final int regist_fanhui=0x7f0c008f;
+        public static final int regist_img=0x7f0c008e;
         public static final int right_icon=0x7f0c0086;
         public static final int right_side=0x7f0c0082;
         public static final int screen=0x7f0c0015;
@@ -1975,6 +1978,7 @@ containing a value of this type.
         public static final int text=0x7f0c008c;
         public static final int text1=0x7f0c0061;
         public static final int text2=0x7f0c0060;
+        public static final int text3=0x7f0c0091;
         public static final int textSpacerNoButtons=0x7f0c0035;
         public static final int textSpacerNoTitle=0x7f0c0034;
         public static final int textView1=0x7f0c005d;
@@ -1990,13 +1994,15 @@ containing a value of this type.
         public static final int user=0x7f0c005a;
         public static final int view1=0x7f0c005c;
         public static final int view2=0x7f0c0062;
+        public static final int view3=0x7f0c0092;
         public static final int view_btn=0x7f0c0077;
         public static final int withText=0x7f0c0021;
         public static final int wrap_content=0x7f0c0019;
         public static final int zhang=0x7f0c0058;
         public static final int zhang1=0x7f0c005f;
+        public static final int zhang2=0x7f0c0090;
         public static final int zhanghao=0x7f0c0059;
-        public static final int zhanghaozhuxiao=0x7f0c008e;
+        public static final int zhanghaozhuxiao=0x7f0c0094;
         public static final int zhuce=0x7f0c0065;
     }
     public static final class integer {
@@ -2056,11 +2062,12 @@ containing a value of this type.
         public static final int notification_template_media_custom=0x7f04002f;
         public static final int notification_template_part_chronometer=0x7f040030;
         public static final int notification_template_part_time=0x7f040031;
-        public static final int select_dialog_item_material=0x7f040032;
-        public static final int select_dialog_multichoice_material=0x7f040033;
-        public static final int select_dialog_singlechoice_material=0x7f040034;
-        public static final int support_simple_spinner_dropdown_item=0x7f040035;
-        public static final int youtanchukuang=0x7f040036;
+        public static final int regist=0x7f040032;
+        public static final int select_dialog_item_material=0x7f040033;
+        public static final int select_dialog_multichoice_material=0x7f040034;
+        public static final int select_dialog_singlechoice_material=0x7f040035;
+        public static final int support_simple_spinner_dropdown_item=0x7f040036;
+        public static final int youtanchukuang=0x7f040037;
     }
     public static final class menu {
         public static final int caozuo=0x7f0e0000;
