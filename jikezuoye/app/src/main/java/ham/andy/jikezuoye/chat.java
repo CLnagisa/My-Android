@@ -3,14 +3,13 @@ package ham.andy.jikezuoye;
 
 import android.app.Activity;
 
-import android.app.AlertDialog;
+
 import android.content.Context;
-import android.content.DialogInterface;
+
 import android.content.Intent;
-import android.media.Image;
+
 import android.os.Bundle;
-import android.text.Html;
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,13 +20,10 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
 
 /**
  * Created by CL on 2017/5/4.
@@ -101,6 +97,8 @@ public class chat extends Activity{
         chatListView.setAdapter(adapter);
 
     }
+
+
 
 
     /********************************************显示数据的函数开始*******************************************/

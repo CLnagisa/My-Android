@@ -108,6 +108,7 @@
         android:fadingEdge="none"
         android:background="#f0f0f0"
         android:divider="#aaaaaa"
+        android:stackFromBottom="true"
         android:dividerHeight="0px">
     </ListView>
 
