@@ -9,6 +9,9 @@
     <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/app/src/main/java/ham/andy/jikezuoye/Main.java" line="399" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f1bfb5c3-c2ed-45a8-bd70-90db3f258bf5" name="Default" comment="" />
     <ignored path="jikezuoye.iws" />
@@ -50,7 +53,7 @@
       <file leaf-file-name="chat.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ham/andy/jikezuoye/chat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
+            <state relative-caret-position="-760">
               <caret line="76" column="35" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -75,9 +78,18 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ham/andy/jikezuoye/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="242" column="37" selection-start-line="242" selection-start-column="37" selection-end-line="242" selection-end-column="37" />
-              <folding />
+            <state relative-caret-position="260">
+              <caret line="397" column="42" selection-start-line="397" selection-start-column="42" selection-end-line="397" selection-end-column="42" />
+              <folding>
+                <element signature="e#9847#13517#0" expanded="true" />
+                <element signature="e#10434#13429#0" expanded="true" />
+                <element signature="e#13428#13429#0" expanded="true" />
+                <element signature="e#13516#13517#0" expanded="true" />
+                <element signature="e#17129#17517#0" expanded="true" />
+                <element signature="e#17516#17517#0" expanded="true" />
+                <element signature="e#17542#18608#0" expanded="true" />
+                <element signature="e#18607#18608#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -111,8 +123,8 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ham/andy/jikezuoye/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1623">
-              <caret line="156" column="39" selection-start-line="156" selection-start-column="39" selection-end-line="156" selection-end-column="39" />
+            <state relative-caret-position="163">
+              <caret line="86" column="54" selection-start-line="78" selection-start-column="19" selection-end-line="86" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2219#5401#0" expanded="true" />
@@ -140,8 +152,8 @@
       <file leaf-file-name="regist.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ham/andy/jikezuoye/regist.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="75" selection-end-column="33" />
+            <state relative-caret-position="100">
+              <caret line="102" column="49" selection-start-line="102" selection-start-column="32" selection-end-line="102" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -2439,7 +2451,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1370" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1370" height="744" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2458,7 +2470,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33162394" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33162394" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32820514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -2492,29 +2504,29 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/ham/andy/jikezuoye/Main.java</url>
-          <line>140</line>
+          <line>153</line>
           <properties />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/ham/andy/jikezuoye/Main.java</url>
-          <line>105</line>
+          <line>118</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/ham/andy/jikezuoye/Main.java</url>
-          <line>150</line>
+          <line>163</line>
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/ham/andy/jikezuoye/Main.java</url>
-          <line>237</line>
+          <line>250</line>
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2659,7 +2671,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#9847#13517#0" expanded="true" />
+            <element signature="e#10434#13429#0" expanded="true" />
+            <element signature="e#13428#13429#0" expanded="true" />
+            <element signature="e#13516#13517#0" expanded="true" />
+            <element signature="e#17129#17517#0" expanded="true" />
+            <element signature="e#17516#17517#0" expanded="true" />
+            <element signature="e#17542#18608#0" expanded="true" />
+            <element signature="e#18607#18608#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3028,18 +3049,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ham/andy/jikezuoye/chat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
+        <state relative-caret-position="-760">
           <caret line="76" column="35" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ham/andy/jikezuoye/regist.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="75" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -3048,8 +3059,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ham/andy/jikezuoye/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1623">
-          <caret line="156" column="39" selection-start-line="156" selection-start-column="39" selection-end-line="156" selection-end-column="39" />
+        <state relative-caret-position="163">
+          <caret line="86" column="54" selection-start-line="78" selection-start-column="19" selection-end-line="86" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2219#5401#0" expanded="true" />
@@ -3060,11 +3071,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ham/andy/jikezuoye/Main.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ham/andy/jikezuoye/regist.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
-          <caret line="242" column="37" selection-start-line="242" selection-start-column="37" selection-end-line="242" selection-end-column="37" />
-          <folding />
+          <caret line="102" column="49" selection-start-line="102" selection-start-column="32" selection-end-line="102" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ham/andy/jikezuoye/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="397" column="42" selection-start-line="397" selection-start-column="42" selection-end-line="397" selection-end-column="42" />
+          <folding>
+            <element signature="e#9847#13517#0" expanded="true" />
+            <element signature="e#10434#13429#0" expanded="true" />
+            <element signature="e#13428#13429#0" expanded="true" />
+            <element signature="e#13516#13517#0" expanded="true" />
+            <element signature="e#17129#17517#0" expanded="true" />
+            <element signature="e#17516#17517#0" expanded="true" />
+            <element signature="e#17542#18608#0" expanded="true" />
+            <element signature="e#18607#18608#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -79,6 +79,19 @@ public class Main extends Activity {
         cursor.close();
         db.close();
 
+        /**************************************创建好有列表表**********************************************/
+        getShujuku();
+        cursor = db.rawQuery("SELECT count(*) FROM sqlite_master WHERE type='table' AND name='" + now_use + "'", null);
+        //判断数据库的存在，这里一定是有数据返回的，存在的话是1，不存在的话是0，所以要用geiInt(0)获取这个值来判断
+        cursor.moveToNext();
+        if(cursor.getInt(0) == 0) {
+            String sql = "CREATE TABLE " + now_use + " (\"id\"  INTEGER PRIMARY KEY AUTOINCREMENT, \"userName\"  TEXT(20), CONSTRAINT \"userName\" FOREIGN KEY (\"userName\") REFERENCES \"user\" (\"userName\"))";
+            db.execSQL(sql);
+            cursor.close();
+            db.close();
+        }
+
+
         /********点击头像右边弹出框的实现***********/
         ImageView touxiang = (ImageView)findViewById(R.id.touxiang);
         touxiang.setOnClickListener(new View.OnClickListener() {
@@ -261,6 +274,7 @@ public class Main extends Activity {
                                     db.close();
                                 } else {
                                     db.execSQL("Insert into " + now_use + " Values(null, '" + yonghuming + "')");
+                                    db.execSQL("Insert into " + yonghuming + " Values(null, '" + now_use + "')");
                                     map = new HashMap<String, Object>();
                                     map.put("title", yonghuming);
                                     map.put("img", R.drawable.a);
@@ -298,19 +312,11 @@ public class Main extends Activity {
     /* 主页数据显示，listitem的函数实现*/
        private List<Map<String, Object>> getData() {
         //获取数据用的，一个哈希map
-        getShujuku();
-        Cursor cursor = db.rawQuery("SELECT count(*) FROM sqlite_master WHERE type='table' AND name='" + now_use + "'", null);
-        //判断数据库的存在，这里一定是有数据返回的，存在的话是1，不存在的话是0，所以要用geiInt(0)获取这个值来判断
-        cursor.moveToNext();
-        if(cursor.getInt(0) == 0) {
-            String sql = "CREATE TABLE " + now_use + " (\"id\"  INTEGER PRIMARY KEY AUTOINCREMENT, \"userName\"  TEXT(20), CONSTRAINT \"userName\" FOREIGN KEY (\"userName\") REFERENCES \"user\" (\"userName\"))";
-            db.execSQL(sql);
-            cursor.close();
-            db.close();
-        }  else {
+
             //查找出该用户的好友表，遍历显示出来
-            cursor = db.rawQuery("Select userName From " + now_use, null);
-            while(cursor.moveToNext()) {
+           getShujuku();
+           Cursor cursor = db.rawQuery("Select userName From " + now_use, null);
+           while(cursor.moveToNext()) {
                 map = new HashMap<String, Object>();
                 map.put("title", cursor.getString(0));
                 map.put("img", R.drawable.a);
@@ -318,7 +324,6 @@ public class Main extends Activity {
             }
             cursor.close();
             db.close();
-        }
         return list;
     }
     //继承BaseAdapter， 写自己的adapter
@@ -374,13 +379,35 @@ public class Main extends Activity {
             //设置创建的img数据为myData的第一个数据
             holder.img.setBackgroundResource((Integer)myData.get(position).get("img"));
             holder.title.setText((String)myData.get(position).get("title"));
-            final String aaa = (String)myData.get(position).get("title");
+            final String aaa = (String)myData.get(position).get("title");   //获取当前的title，也就是该好友
             holder.button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     //删除对应的view，list.remove(position)是删除哈希表的数据，notifyDataSetChanged()是告知数据被改变需要更新。
-                    list.remove(position);
-                    notifyDataSetChanged();
+                    new AlertDialog.Builder(Main.this).setTitle("删除好友")//设置对话框标题
+                            .setMessage("你确定要删除吗？")//设置显示的内容
+                            .setNegativeButton("返回", new DialogInterface.OnClickListener() {//添加返回按钮
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {//响应事件
+                                    // TODO Auto-generated method stub
+                                    Log.i("alertdialog", " 请保存数据！");
+                                }
+                            }).setPositiveButton("确定",new DialogInterface.OnClickListener() {   //确定
+                                @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        //删除数据
+                                        getShujuku();
+                                        db.execSQL("Delete From " + now_use + " Where userName='" + aaa + "'");
+                                        db.execSQL("Delete From " + aaa + " Where userName='" + now_use + "'");
+                                        db.close();
+                                        Toast toast = null;
+                                        toast = Toast.makeText(getApplicationContext(), "删除陈功", Toast.LENGTH_LONG);
+                                        toast.setGravity(Gravity.CENTER, 0, -200);
+                                        toast.show();
+                                        list.remove(position);
+                                        notifyDataSetChanged();
+                                    }
+                            }).show();//在按键响应事件中显示此对话框
                 }
             });
             //监视每一个listview，点击的时候跳转到对应的activity
@@ -440,8 +467,6 @@ public class Main extends Activity {
                 fileOutputStream.close();             //关闭可写入的流文件
             } catch (IOException e) {
             }
-        } else {
-
         }
         db = SQLiteDatabase.openOrCreateDatabase(databaseFile, null);
     }

@@ -5,43 +5,43 @@
     density="mdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="19507367335898"
+    timestamp="23180731848988"
     token="-5394933304747258109"
     verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="329" />
+        duration="308" />
     <task
         name="instant-run-dex"
-        duration="59" />
+        duration="10" />
     <task
         name="instant-run-transform"
-        duration="107" />
+        duration="37" />
     <task
         name="verifier"
-        duration="17" />
+        duration="5" />
 
     <artifact
         location="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\reload-dex\debug\classes.dex"
         type="RELOAD_DEX" />
 
     <build
-        timestamp="19412753858857"
+        timestamp="22498846382926"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="19475069168864"
+        timestamp="23126062058174"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
             type="DEX" />
     </build>
     <build
-        timestamp="19507367335898"
+        timestamp="23180731848988"
         verifier="COMPATIBLE" >
         <artifact
             location="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\reload-dex\debug\classes.dex"
