@@ -1934,7 +1934,7 @@ containing a value of this type.
         public static final int notification_background=0x7f0c0087;
         public static final int notification_main_column=0x7f0c0081;
         public static final int notification_main_column_container=0x7f0c0080;
-        public static final int open=0x7f0c0096;
+        public static final int open=0x7f0c0097;
         public static final int parentPanel=0x7f0c0030;
         public static final int passwd=0x7f0c0063;
         public static final int passwd1=0x7f0c0093;
@@ -1989,6 +1989,7 @@ containing a value of this type.
         public static final int top=0x7f0c0023;
         public static final int topPanel=0x7f0c0039;
         public static final int touxiang=0x7f0c0057;
+        public static final int tuichu=0x7f0c0096;
         public static final int up=0x7f0c0008;
         public static final int useLogo=0x7f0c0012;
         public static final int user=0x7f0c005a;

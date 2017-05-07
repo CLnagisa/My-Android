@@ -164,12 +164,12 @@
         "source": "C:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
-        "source": "C:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.0\\res\\layout\\notification_template_part_chronometer.xml"
-    },
-    {
         "merged": "C:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\merged\\debug\\layout\\main.xml",
         "source": "C:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\src\\main\\res\\layout\\main.xml"
+    },
+    {
+        "merged": "C:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "C:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.0\\res\\layout\\notification_template_part_chronometer.xml"
     },
     {
         "merged": "C:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",

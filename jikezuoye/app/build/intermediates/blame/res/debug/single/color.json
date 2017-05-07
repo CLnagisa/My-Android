@@ -32,12 +32,12 @@
         "source": "C:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.0\\res\\color\\abc_hint_foreground_material_dark.xml"
     },
     {
-        "merged": "C:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
-        "source": "C:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.0\\res\\color\\abc_hint_foreground_material_light.xml"
-    },
-    {
         "merged": "C:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_btn_checkable.xml",
         "source": "C:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.0\\res\\color\\abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "C:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
+        "source": "C:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.0\\res\\color\\abc_hint_foreground_material_light.xml"
     },
     {
         "merged": "C:\\Users\\43715\\Desktop\\android\\My-Android\\jikezuoye\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_edittext.xml",

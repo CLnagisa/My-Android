@@ -54,6 +54,9 @@ public class Main extends Activity {
     private List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();      //用全局来保存，实现增加和删除
     private Map<String, Object> map = new HashMap<String, Object>();   //基于哈希表的map，用来存取数据，
     private SQLiteDatabase db = null;
+    private MyAdapter adapter = null;
+    String now_use = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +70,14 @@ public class Main extends Activity {
         setContentView(R.layout.main);
 
         mContext = this;    //获取主Main的this，有几个地方会用到
+        adapter = new MyAdapter(this);
+
+        getShujuku();
+        Cursor cursor = db.rawQuery("Select userName From denglu Where state=1", null);        //查找是否存在状态为1的，有那就是登录过，直接跳转，没有那就继续下面的操作
+        cursor.moveToNext();
+        now_use = cursor.getString(0).toString();
+        cursor.close();
+        db.close();
 
         /********点击头像右边弹出框的实现***********/
         ImageView touxiang = (ImageView)findViewById(R.id.touxiang);
@@ -145,12 +156,9 @@ public class Main extends Activity {
         backgroundAlpha(0.5f);
 
 
-        //获取数据更加用户名
-        getShujuku();
-        Cursor cursor = db.rawQuery("Select userName From denglu Where state=1", null);        //查找是否存在状态为1的，有那就是登录过，直接跳转，没有那就继续下面的操作
-        cursor.moveToNext();
+        //获取数据更改用户名
         final TextView yonghuming = (TextView)popupWindowView.findViewById(R.id.yonghuming);
-        yonghuming.setText(cursor.getString(0).toString());
+        yonghuming.setText(now_use);
         db.close();
         popupWindowView.setFocusableInTouchMode(true);    //获取淡出框的焦点
         /*注销按钮，右弹出框的监听时间，如果只是一般的用inflate来获取的话是不行的，inflate的作用就是获取到xml，
@@ -168,6 +176,13 @@ public class Main extends Activity {
                 logoutIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(logoutIntent);
                 finish();
+            }
+        });
+        TextView tuichu = (TextView)popupWindowView.findViewById(R.id.tuichu);
+        tuichu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.exit(0);
             }
         });
 
@@ -216,21 +231,57 @@ public class Main extends Activity {
             public boolean onMenuItemClick(MenuItem item) {
                 //创建一个带输入框的弹出框
                 final EditText inputServer = new EditText(mContext);
+                inputServer.setBackgroundResource(R.drawable.shape);
                 AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
                 builder.setTitle("请输入要添加的用户名").setView(inputServer)
                         .setNegativeButton("取消", null);                                  //取消就取消
                 builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {  //点确定的相应事件
                     public void onClick(DialogInterface dialog, int which) {
                         String yonghuming = null;
-                        yonghuming = inputServer.getText().toString();
-                        ListView listview = null;
-                        listview = (ListView)findViewById(R.id.MyListView);
-                        map = new HashMap<String, Object>();
-                        map.put("title", yonghuming);
-                        map.put("img", R.drawable.a);
-                        list.add(map);
-                        MyAdapter adapter = new MyAdapter(mContext);
-                        listview.setAdapter(adapter);
+                        yonghuming = inputServer.getText().toString();     //获取输入的数据
+                        Toast toast = null;
+                        getShujuku();
+                        Cursor cursor = db.rawQuery("Select userName From " + now_use +" Where userName = '" + yonghuming + "'", null);
+                        cursor.moveToNext();
+                        if(cursor.getCount() <= 0) {
+                            cursor = db.rawQuery("Select userName From user Where userName = '" + yonghuming + "'", null);
+                            cursor.moveToNext();
+                            if(cursor.getCount() <= 0) {
+                                toast = Toast.makeText(getApplicationContext(), "没有该用户", Toast.LENGTH_LONG);
+                                toast.setGravity(Gravity.CENTER, 0, -200);
+                                toast.show();
+                                cursor.close();
+                                db.close();
+                            } else {
+                                if(cursor.getString(0).equals(now_use)) {
+                                    toast = Toast.makeText(getApplicationContext(), "不能添加自己", Toast.LENGTH_LONG);
+                                    toast.setGravity(Gravity.CENTER, 0, -200);
+                                    toast.show();
+                                    cursor.close();
+                                    db.close();
+                                } else {
+                                    db.execSQL("Insert into " + now_use + " Values(null, '" + yonghuming + "')");
+                                    map = new HashMap<String, Object>();
+                                    map.put("title", yonghuming);
+                                    map.put("img", R.drawable.a);
+                                    list.add(map);
+                                    toast = Toast.makeText(getApplicationContext(), "好友添加成功", Toast.LENGTH_LONG);
+                                    toast.setGravity(Gravity.CENTER, 0, -200);
+                                    toast.show();
+                                    adapter.notifyDataSetChanged();
+                                    cursor.close();
+                                    db.close();
+                                }
+                            }
+
+                        } else {
+                            toast = Toast.makeText(getApplicationContext(), "该用户已在你的好友列表里面", Toast.LENGTH_LONG);
+                            toast.setGravity(Gravity.CENTER, 0, -200);
+                            toast.show();
+                            cursor.close();
+                            db.close();
+                        }
+
                     }
                 });
                 builder.show();
@@ -247,14 +298,27 @@ public class Main extends Activity {
     /* 主页数据显示，listitem的函数实现*/
        private List<Map<String, Object>> getData() {
         //获取数据用的，一个哈希map
-        map = new HashMap<String, Object>();
-        map.put("title", "第一个人");
-        map.put("img", R.drawable.a);
-        list.add(map);
-           map = new HashMap<String, Object>();
-           map.put("title", "第二个人");
-           map.put("img", R.drawable.a);
-           list.add(map);
+        getShujuku();
+        Cursor cursor = db.rawQuery("SELECT count(*) FROM sqlite_master WHERE type='table' AND name='" + now_use + "'", null);
+        //判断数据库的存在，这里一定是有数据返回的，存在的话是1，不存在的话是0，所以要用geiInt(0)获取这个值来判断
+        cursor.moveToNext();
+        if(cursor.getInt(0) == 0) {
+            String sql = "CREATE TABLE " + now_use + " (\"id\"  INTEGER PRIMARY KEY AUTOINCREMENT, \"userName\"  TEXT(20), CONSTRAINT \"userName\" FOREIGN KEY (\"userName\") REFERENCES \"user\" (\"userName\"))";
+            db.execSQL(sql);
+            cursor.close();
+            db.close();
+        }  else {
+            //查找出该用户的好友表，遍历显示出来
+            cursor = db.rawQuery("Select userName From " + now_use, null);
+            while(cursor.moveToNext()) {
+                map = new HashMap<String, Object>();
+                map.put("title", cursor.getString(0));
+                map.put("img", R.drawable.a);
+                list.add(map);
+            }
+            cursor.close();
+            db.close();
+        }
         return list;
     }
     //继承BaseAdapter， 写自己的adapter

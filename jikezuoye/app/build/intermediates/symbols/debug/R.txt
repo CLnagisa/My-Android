@@ -616,7 +616,7 @@ int id normal 0x7f0c000a
 int id notification_background 0x7f0c0087
 int id notification_main_column 0x7f0c0081
 int id notification_main_column_container 0x7f0c0080
-int id open 0x7f0c0096
+int id open 0x7f0c0097
 int id parentPanel 0x7f0c0030
 int id passwd 0x7f0c0063
 int id passwd1 0x7f0c0093
@@ -671,6 +671,7 @@ int id title_template 0x7f0c003a
 int id top 0x7f0c0023
 int id topPanel 0x7f0c0039
 int id touxiang 0x7f0c0057
+int id tuichu 0x7f0c0096
 int id up 0x7f0c0008
 int id useLogo 0x7f0c0012
 int id user 0x7f0c005a
