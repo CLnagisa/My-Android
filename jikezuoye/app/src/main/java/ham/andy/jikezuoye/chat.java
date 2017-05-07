@@ -102,7 +102,15 @@ public class chat extends Activity{
                     return;
                 editText.setText("");
                 //添加到哈希表
-                //addTextToList(a, 0);
+
+                getShujuku();
+                db.execSQL("Insert Into message Values(null, '" + a + "', '" + now_use + "', '" + aaa + "')");
+                db.close();
+                HashMap<String,Object> map=new HashMap<String,Object>();
+                map.put("person", 0);
+                map.put("text", a);
+                chatList.add(map);
+
                 //通知说数据更改了，
                 adapter.notifyDataSetChanged();
                 //定位到到listview中的view中的最后一个

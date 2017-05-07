@@ -5,22 +5,22 @@
     density="mdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="25808465462393"
+    timestamp="26284561580293"
     token="-5394933304747258109"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="METHOD_ADDED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="405" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="60" />
     <task
         name="verifier"
-        duration="0" />
+        duration="16" />
 
     <artifact
         location="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
@@ -41,22 +41,8 @@
             type="RESOURCES" />
     </build>
     <build
-        timestamp="25579436287097"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\builds\debug\25579436287097\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="25591399306635"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\builds\debug\25591399306635\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="25808465462393"
-        verifier="COLD_SWAP_REQUESTED" >
+        timestamp="26284561580293"
+        verifier="METHOD_ADDED" >
         <artifact
             location="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
             type="DEX" />
