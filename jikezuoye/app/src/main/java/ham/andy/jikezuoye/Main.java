@@ -279,10 +279,10 @@ public class Main extends Activity {
                                     map.put("title", yonghuming);
                                     map.put("img", R.drawable.a);
                                     list.add(map);
+                                    adapter.notifyDataSetChanged();
                                     toast = Toast.makeText(getApplicationContext(), "好友添加成功", Toast.LENGTH_LONG);
                                     toast.setGravity(Gravity.CENTER, 0, -200);
                                     toast.show();
-                                    adapter.notifyDataSetChanged();
                                     cursor.close();
                                     db.close();
                                 }

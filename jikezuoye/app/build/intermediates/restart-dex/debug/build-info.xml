@@ -5,26 +5,26 @@
     density="mdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="23180731848988"
+    timestamp="25808465462393"
     token="-5394933304747258109"
-    verifier="COMPATIBLE" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="308" />
+        duration="0" />
     <task
         name="instant-run-dex"
-        duration="10" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="37" />
+        duration="0" />
     <task
         name="verifier"
-        duration="5" />
+        duration="0" />
 
     <artifact
-        location="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\reload-dex\debug\classes.dex"
-        type="RELOAD_DEX" />
+        location="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
+        type="DEX" />
 
     <build
         timestamp="22498846382926"
@@ -34,18 +34,32 @@
             type="MAIN" />
     </build>
     <build
-        timestamp="23126062058174"
+        timestamp="25532463043698"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+            type="RESOURCES" />
+    </build>
+    <build
+        timestamp="25579436287097"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\builds\debug\25579436287097\classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        timestamp="25591399306635"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\builds\debug\25591399306635\classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        timestamp="25808465462393"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
             type="DEX" />
-    </build>
-    <build
-        timestamp="23180731848988"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="C:\Users\43715\Desktop\android\My-Android\jikezuoye\app\build\intermediates\reload-dex\debug\classes.dex"
-            type="RELOAD_DEX" />
     </build>
 
 </instant-run>

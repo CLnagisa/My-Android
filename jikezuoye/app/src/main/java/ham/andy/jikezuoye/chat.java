@@ -8,6 +8,8 @@ import android.content.Context;
 
 import android.content.Intent;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import android.view.LayoutInflater;
@@ -21,7 +23,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 
-
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -32,6 +37,9 @@ import java.util.HashMap;
 public class chat extends Activity{
 
     private Context mContext = null;   //上下文
+    String now_use = null;
+    private SQLiteDatabase db = null;
+    private String aaa = null;     //保存和谁聊天
 
     ArrayList<HashMap<String, Object>> chatList = null;
 
@@ -43,9 +51,18 @@ public class chat extends Activity{
 
         mContext = this;
 
+        /*********************************获取当前的登录用户名*****************************/
+        getShujuku();
+        Cursor cursor = db.rawQuery("Select userName From denglu Where state=1", null);        //查找是否存在状态为1的，有那就是登录过，直接跳转，没有那就继续下面的操作
+        cursor.moveToNext();
+        now_use = cursor.getString(0).toString();
+        cursor.close();
+        db.close();
+
+
         /**********更改标题*********/
         Intent intent = getIntent();    //获取传过来的数据
-        String aaa = intent.getStringExtra("title");
+        aaa = intent.getStringExtra("title");
         TextView chat_title = (TextView)findViewById(R.id.chat_title);//根据传过来的数据更改标题
         chat_title.setText(aaa);
 
@@ -67,10 +84,8 @@ public class chat extends Activity{
 
         /****************************************聊天记录显示****************************************/
         chatList = new ArrayList<HashMap<String, Object>>();
-        addTextToList("自己的第一", 0);
-        addTextToList("自己的第二", 0);
-        addTextToList("他人的第一", 1);
-        addTextToList("他人的第二", 1);
+        addTextToList();     //执行显示函数
+
 
         final EditText editText = (EditText)findViewById(R.id.chat_edittext);
         final ListView chatListView = (ListView)findViewById(R.id.chat_list);
@@ -87,7 +102,7 @@ public class chat extends Activity{
                     return;
                 editText.setText("");
                 //添加到哈希表
-                addTextToList(a, 0);
+                //addTextToList(a, 0);
                 //通知说数据更改了，
                 adapter.notifyDataSetChanged();
                 //定位到到listview中的view中的最后一个
@@ -104,11 +119,23 @@ public class chat extends Activity{
     /********************************************显示数据的函数开始*******************************************/
     /********************************************显示数据的函数开始*******************************************/
     //添加数据进哈希表
-    protected void addTextToList(String text, int who){
-        HashMap<String,Object> map=new HashMap<String,Object>();
-        map.put("person",who );
-        map.put("text", text);
-        chatList.add(map);
+    protected void addTextToList(){
+        getShujuku();
+        String sql = "Select message, sendName, receiveName From message where sendName='" + now_use + "' and receiveName='" + aaa + "' OR sendName='" + aaa + "' and receiveName='" + now_use + "'";
+        Cursor cursor = db.rawQuery(sql, null);
+        while(cursor.moveToNext()) {
+            if(cursor.getString(1).equals(now_use)) {
+                HashMap<String,Object> map=new HashMap<String,Object>();
+                map.put("person", 0);
+                map.put("text", cursor.getString(0));
+                chatList.add(map);
+            } else {
+                HashMap<String,Object> map=new HashMap<String,Object>();
+                map.put("person", 1);
+                map.put("text", cursor.getString(0));
+                chatList.add(map);
+            }
+        }
     }
     //继承BaseAdapter， 写自己的adapter
     public class MyChatAdapter extends BaseAdapter {
@@ -171,6 +198,39 @@ public class chat extends Activity{
     /********************************************显示数据的函数结束*******************************************/
     /********************************************显示数据的函数结束*******************************************/
 
+
+    /********************************************判断和打开数据库文件函数开始*************************************/
+    /********************************************判断和打开数据库文件函数开始*************************************/
+    private void getShujuku(){
+        final String DATABASE_PATH="data/data/"+ this.getPackageName() + "/databases/";
+        String databaseFile=DATABASE_PATH+"mysqlite.db";
+        //创建databases目录（不存在时）
+        File file=new File(DATABASE_PATH);
+        if(!file.exists()){
+            file.mkdirs();
+        }
+        //判断数据库是否存在
+
+        File now = new File(databaseFile);
+        if (!now.exists()) {
+            //把数据库拷贝到/data/data/<package_name>/databases目录下
+            try {
+                FileOutputStream fileOutputStream = new FileOutputStream(databaseFile);       //创建写入流文件
+                //数据库放res/raw目录下
+                InputStream inputStream = getResources().openRawResource(R.raw.mysqlite);
+                byte[] buffer = new byte[1024];  //缓存二进制数据
+                int readBytes = 0;
+                while ((readBytes = inputStream.read(buffer)) != -1)     //读取流数据，每次1024个比特
+                    fileOutputStream.write(buffer, 0, readBytes);   //用流方式写
+                inputStream.close();                  //关闭打开的流文件
+                fileOutputStream.close();             //关闭可写入的流文件
+            } catch (IOException e) {
+            }
+        }
+        db = SQLiteDatabase.openOrCreateDatabase(databaseFile, null);
+    }
+    /********************************************判断和打开数据库文件函数结束*************************************/
+    /********************************************判断和打开数据库文件函数结束*************************************/
 
 
 }
